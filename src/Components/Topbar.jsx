@@ -51,7 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Topbar() {
+export default function Topbar(props) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -67,7 +67,7 @@ export default function Topbar() {
             />
           </Search>
           <Button style={{margin: "1%"}} variant="contained" href="/login">
-<PersonOutlineIcon/>  Signin
+<PersonOutlineIcon/>  Login
 </Button>
 <Button style={{margin: "1%"}} variant="contained" href="#contained-buttons">
 <PersonAddIcon />  Register

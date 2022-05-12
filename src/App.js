@@ -8,7 +8,9 @@ import User from './Components/User';
 import Homeuser from './Components/Homeuser';
 import Login from './Components/Login';
 import jwt_decode from "jwt-decode";
-import Navigate from './Components/Navigate';
+import ManageVideos from './Components/ManageVideos';
+import Manageplays from './Components/Manageplays';
+import Register from './Components/Register';
 
 function App() {
   
@@ -20,15 +22,18 @@ function App() {
       var decoded = jwt_decode(token);
       setuser(decoded);
     } catch {}
-  })
+  }, [])
   
 
   return (
     <Router>
         <Routes>
           <Route exact path="/login" element={<Login/>}/>
+          <Route exact path="/register" element={<Register/>}/>
           <Route exact path="/" element={<Homeuser user={user}/>}/>
           <Route exact path="/add_videos" element={<Videos/>}/>
+          <Route exact path="/manage_videos" element={<ManageVideos/>}/>
+          <Route exact path="/manage_screenplays" element={<Manageplays/>}/>
           <Route exact path="/add_screenplays" element={<Screenplays/>}/>
           <Route exact path="/add_magazines" element={<Magazines/>}/>
           <Route exact path="/admin" element={<Home/>}/>

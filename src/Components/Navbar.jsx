@@ -8,11 +8,11 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import Topbar from "./Topbar";
 
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
   return (
     <>
-    <Topbar />
+    <Topbar user={props.user} />
       <nav className="main-nav">
         {/* 1st logo part  */}
         <div className="logo">

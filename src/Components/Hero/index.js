@@ -26,7 +26,7 @@ import {Grid} from '@mui/material';
                     <h2></h2>
                     </Grid>
                     <Grid item xs={6}>
-                    <ReactPlayer style={{width: '84% !important'}}
+                    <ReactPlayer src="https://res.cloudinary.com/ds2zccx0d/video/upload/v1652296311/DEV/ibwctt09fksk4aznpy12.mp4" style={{width: '84% !important'}}
                 
               />
                     </Grid>

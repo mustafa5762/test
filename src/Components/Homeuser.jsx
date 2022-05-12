@@ -11,7 +11,7 @@ function Homeuser(props) {
   return (
     <div>
               
-    <Navbar />
+    <Navbar user={props.user} />
     <Hero />
     <h1 style={{fontSize:'4vw',padding:'3%'}}>Videos</h1>
     <Item />

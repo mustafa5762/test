@@ -17,10 +17,10 @@ function User() {
         fetchUsers();
     }, []);
 
-    /*const deleteVideo = async (id) => {
-        await axios.get('http://localhost:5000/vd/' + id);
-        setvideos(videos.filter(item => item._id !== id));
-    };*/
+    const deleteUser = async (id) => {
+        await axios.get('https://videos-backends.herokuapp.com/ud/' + id);
+        setusers(users.filter(item => item._id !== id));
+    };
     
 
   return (
@@ -38,7 +38,7 @@ function User() {
                                 {user.role}
                             </Typography>
                             <div>
-                                <Button variant="contained">
+                                <Button variant="contained" onClick={() => deleteUser(user._id)}>
                                     Delete
                                 </Button>
                             </div>

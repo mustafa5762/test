@@ -5,12 +5,10 @@ import Screenplays from './Components/Screenplays';
 import Magazines from './Components/Magazines';
 import Home from './Components/Home';
 import User from './Components/User';
-import Homeuser from './Components/Homeuser';
-import Login from './Components/Login';
 import jwt_decode from "jwt-decode";
 import ManageVideos from './Components/ManageVideos';
 import Manageplays from './Components/Manageplays';
-import Register from './Components/Register';
+import Videoedit from './Components/Videoedit';
 
 function App() {
   
@@ -28,9 +26,7 @@ function App() {
   return (
     <Router>
         <Routes>
-          <Route exact path="/login" element={<Login/>}/>
-          <Route exact path="/register" element={<Register/>}/>
-          <Route exact path="/" element={<Homeuser user={user}/>}/>
+        <Route exact path="/update_video" element={<Videoedit/>}/>
           <Route exact path="/add_videos" element={<Videos/>}/>
           <Route exact path="/manage_videos" element={<ManageVideos/>}/>
           <Route exact path="/manage_screenplays" element={<Manageplays/>}/>

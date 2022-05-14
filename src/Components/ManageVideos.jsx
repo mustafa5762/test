@@ -2,8 +2,11 @@ import { Paper, Typography , Button, Toolbar } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import ResponsiveDrawer from './Sidebar'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function ManageVideos() {
+
+    let navigate = useNavigate();
 
     const [videos, setvideos] = useState(null);
 
@@ -37,6 +40,9 @@ function ManageVideos() {
                                 {video.category}
                             </Typography>
                             <div>
+                                <Button variant="contained" style={{marginRight:7}} onClick={() => navigate(`/update_video/${video._id}`)}>
+                                    Edit
+                                </Button>
                                 <Button variant="contained" onClick={() => deleteVideo(video._id)}>
                                     Delete
                                 </Button>

@@ -3,8 +3,11 @@ import React, { useEffect, useState } from 'react'
 import ResponsiveDrawer from './Sidebar'
 import axios from 'axios'
 import Videoedit from './Videoedit';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+
+    let navigate = useNavigate();
 
     const [videos, setvideos] = useState(null);
     const [screenplays, setscreenplays] = useState(null);
@@ -116,6 +119,9 @@ function Home() {
                                 {video.category}
                             </Typography>
                             <div>
+                                <Button variant="contained" style={{marginRight:7}} onClick={() => navigate(`/update_video/${video._id}`)}>
+                                    Edit
+                                </Button>
                                 <Button variant="contained" onClick={() => deleteVideo(video._id)}>
                                     Delete
                                 </Button>
@@ -143,6 +149,9 @@ function Home() {
                                 {screenplay.type}
                             </Typography>
                             <div>
+                                <Button variant="contained" style={{marginRight:7}} onClick={() => navigate(`/update_screenplay/${screenplay._id}`)}>
+                                    Edit
+                                </Button>
                                 <Button variant="contained" onClick={() => deletePlay(screenplay._id)}>
                                     Delete
                                 </Button>
@@ -170,6 +179,9 @@ function Home() {
                                 {magazine.title}
                             </Typography>
                             <div>
+                                <Button variant="contained" style={{marginRight:7}} onClick={() => navigate(`/update_magazine/${magazine._id}`)}>
+                                    Edit
+                                </Button>
                                 <Button variant="contained" onClick={() => deleteMag(magazine._id)}>
                                     Delete
                                 </Button>

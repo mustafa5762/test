@@ -4,24 +4,24 @@ import ResponsiveDrawer from './Sidebar'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
-function Manageplays() {
+function Managemag() {
 
     let navigate = useNavigate();
 
-    const [plays, setplays] = useState(null);
+    const [mags, setmags] = useState(null);
 
     const fetchPlays = async () => {
-        const ress = await axios.get('https://videos-backends.herokuapp.com/screenplays');
-        setplays(ress.data);
+        const ress = await axios.get('https://videos-backends.herokuapp.com/magazines');
+        setmags(ress.data);
     };
 
     useEffect(() => {
       fetchPlays();
     }, []);
 
-    const deletePlay = async (id) => {
-        await axios.get('https://videos-backends.herokuapp.com/sd/' + id);
-        setplays(plays.filter(item => item._id !== id));
+    const deleteMag = async (id) => {
+        await axios.get('https://videos-backends.herokuapp.com/md/' + id);
+        setmags(mags.filter(item => item._id !== id));
     };
 
 
@@ -29,21 +29,21 @@ function Manageplays() {
     <div>
         <ResponsiveDrawer>
         {
-                plays &&
+                mags &&
                 <Paper elevation={3} style={{padding:20}}>
-                    {plays.map(play =>
-                        <div key={play._id} style={{display:'flex',alignItems:'center',padding:8}}>
+                    {mags.map(mag =>
+                        <div key={mag._id} style={{display:'flex',alignItems:'center',padding:8}}>
                             <Typography component="p" variant="h7">
-                                {play.title}
+                                {mag.title}
                             </Typography>
                             <Typography color="text.secondary" style={{ flex: 1 , display: 'flex' , justifyContent:'center' }}>
-                                {play.type}
+                                {mag.title}
                             </Typography>
                             <div>
-                                <Button variant="contained" style={{marginRight:7}} onClick={() => navigate(`/update_screenplay/${play._id}`)}>
+                                <Button variant="contained" style={{marginRight:7}} onClick={() => navigate(`/update_magazine/${mag._id}`)}>
                                     Edit
                                 </Button>
-                                <Button variant="contained" onClick={() => deletePlay(play._id)}>
+                                <Button variant="contained" onClick={() => deleteMag(mag._id)}>
                                     Delete
                                 </Button>
                             </div>
@@ -56,4 +56,4 @@ function Manageplays() {
   )
 }
 
-export default Manageplays
+export default Managemag

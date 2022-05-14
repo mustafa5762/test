@@ -64,6 +64,24 @@ function ResponsiveDrawer(props) {
             </ListItemIcon>
             <ListItemText primary="Manage Users" />
           </ListItem>
+          <ListItem button onClick={() => navigate('/manage_videos')}>
+            <ListItemIcon>
+              <MovieIcon />
+            </ListItemIcon>
+            <ListItemText primary="Manage Movies" />
+          </ListItem>
+          <ListItem button onClick={() => navigate('/manage_screenplays')}>
+            <ListItemIcon>
+              <FeaturedPlayListIcon />
+            </ListItemIcon>
+            <ListItemText primary="Manage Screenplays" />
+          </ListItem>
+          <ListItem button onClick={() => navigate('/manage_magazines')}>
+            <ListItemIcon>
+              <NewspaperIcon />
+            </ListItemIcon>
+            <ListItemText primary="Manage Magazines" />
+          </ListItem>
       </List>
     </div>
   );

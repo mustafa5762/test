@@ -9,6 +9,9 @@ import jwt_decode from "jwt-decode";
 import ManageVideos from './Components/ManageVideos';
 import Manageplays from './Components/Manageplays';
 import Videoedit from './Components/Videoedit';
+import Playedit from './Playedit';
+import Magedit from './Components/Magedit';
+import Managemag from './Components/Managemag';
 
 function App() {
   
@@ -26,9 +29,12 @@ function App() {
   return (
     <Router>
         <Routes>
-        <Route exact path="/update_video" element={<Videoedit/>}/>
+          <Route path="/update_video/:id" element={<Videoedit/>}/>
+          <Route path="/update_screenplay/:id" element={<Playedit/>}/>
+          <Route path="/update_magazine/:id" element={<Magedit/>}/>
           <Route exact path="/add_videos" element={<Videos/>}/>
           <Route exact path="/manage_videos" element={<ManageVideos/>}/>
+          <Route exact path="/manage_magazines" element={<Managemag/>}/>
           <Route exact path="/manage_screenplays" element={<Manageplays/>}/>
           <Route exact path="/add_screenplays" element={<Screenplays/>}/>
           <Route exact path="/add_magazines" element={<Magazines/>}/>
